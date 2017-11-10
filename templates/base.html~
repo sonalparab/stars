@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Astronomy</title>
+  </head>
+  <body>
+    <h1>Title:{{title}} </h1>
+    <h2> {{date}} </h2>
+    <h3>Url:{{url}}</h3>
+    <h4>{{explanation}}</h4>
+    <h5>If you want an hd image:{{hdurl}}</h5>
+  </body>
+</html>
