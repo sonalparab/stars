@@ -17,6 +17,15 @@ def root():
     return render_template('base.html',title=title,date=date,url=url\
                            ,explanation=explanation,hdurl=hdurl)
 
+@app.route('/tunes')
+def tunes():
+
+    u = urllib2.urlopen("https://itunes.apple.com/search?term=approaching+nirvana&entity=album&collectionExplicitness=notExplicit&limit=20")
+    u1 = urllib2.urlopen("https://itunes.apple.com/lookup?id=840803139&limit-10")
+    d = json.loads(u.read())
+    print(d)
+    print()
+    return render_template('tunes.html',artist="Approaching Nirvana",list = d['results'])
 
 if __name__ == '__main__':
     app.debug = True

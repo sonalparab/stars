@@ -1,0 +1,36 @@
+{%extends "base.html" %}
+
+{% block title %}
+Tunes
+{% endblock %}
+
+{% block content %}
+<h1> iTunes Search API </h1>
+<h2> Artist: {{artist}} </h2>
+<table>
+  <tr>
+    <thead>
+      <th> Album </th>
+      <th></th>
+      <th> Release Date </th>
+      <th></th>
+      <th> # of Tracks </th>
+      <th></th>
+      <th> Genre </th>
+    </thead>
+  </tr>
+  <tbody>
+  {% for dict in list %} 
+    <tr>
+      <td> {{dict['collectionName']}}  </td>
+      <td></td>
+      <td> {{dict['releaseDate'][0:10]}}  </td>
+      <td></td>
+      <td> {{dict['trackCount']}} </td>
+      <td></td>
+      <td> {{dict['primaryGenreName']}}  </td>
+    <tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
