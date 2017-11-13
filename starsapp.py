@@ -21,7 +21,6 @@ def root():
 def tunes():
 
     u = urllib2.urlopen("https://itunes.apple.com/search?term=approaching+nirvana&entity=album&collectionExplicitness=notExplicit&limit=20")
-    u1 = urllib2.urlopen("https://itunes.apple.com/lookup?id=840803139&limit-10")
     d = json.loads(u.read())
     print(d)
     print()
